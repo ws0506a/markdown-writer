@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 .vercel
 .env*.local
+
+# tsc -b artifacts (vite.config.ts → vite.config.js/.d.ts)
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
