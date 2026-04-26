@@ -14,8 +14,6 @@ npm install
 npm run dev
 ```
 
-打开浏览器访问 http://localhost:5173
-
 ## 构建与预览
 
 ```bash
@@ -87,17 +85,5 @@ src/
     └── Toast.tsx
 ```
 
-## 已知限制
 
-- 文档超过约 5 万字时，每次按键都会重新解析整篇 Markdown，会有可感知延迟。修复思路是把 `renderMarkdown` 调用包一层 ~250 ms debounce。
-- localStorage 单域名上限 5MB，达到上限会用 Toast 提示，但不会自动清理旧草稿。
-- HTTP 协议下 `navigator.clipboard.writeText` 不可用，已用旧版 `execCommand('copy')` 兜底，但部分新浏览器已弃用此 API。
-- 自动保存采用 400 ms debounce，并在 `beforeunload` 时同步刷盘，正常关闭页面不会丢字；强制断电极端情况下最多丢失 400 ms 内的输入。
 
-## 关于复盘文档
-
-`复盘.md` 是任务交付物之一，**必须由你本人填写**，不要让 AI 代笔——任务书把它列为「比代码更能反映工程素养」的考察项，让 AI 替写就直接破坏了考察意图。仓库里 `复盘.md` 是空模板，照着 5 个问题填即可。
-
-## License
-
-MIT
